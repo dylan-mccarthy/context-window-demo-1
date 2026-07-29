@@ -11,7 +11,6 @@ public static class PaymentRetryPolicy
         var numericStatusCode = (int)statusCode;
 
         return statusCode is HttpStatusCode.RequestTimeout or HttpStatusCode.TooManyRequests
-            || numericStatusCode is >= 500 and <= 599
-            || numericStatusCode >= 400;
+            || numericStatusCode is >= 500 and <= 599;
     }
 }
